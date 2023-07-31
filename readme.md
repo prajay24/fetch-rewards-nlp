@@ -8,8 +8,9 @@ Steps to run the assignment in a new conda environment
 - Launch Terminal from VSCode, ensure that your conda envirnment is 'fetch-prajay'
 - Run the command in the terminal 'pip install -r requirements.txt'. This shall install all the packages required for the project. This may take a few minutes to install
 - To activate the server, run, 'uvicorn main:app --reload'
-- Ensure there are no other local servers previous running on the same port. Open in an incognito browser window to open 'http://127.0.0.1:8000/docs' This will launch the Swagger Document with the 3 REST APIs
-
+- Ensure there are no other local servers previous running on the same port. Open in an incognito browser window to open 'http://127.0.0.1:8000/docs' This will launch the Swagger Document with the 6 GET APIs.
+  - 3 APIs each starting with /cosine for cosine similarities to give results for user searches by - brand, retailer, and category
+  - 3 APIs each starting with /dot for dot scores to give results for user searches by - brand, retailer, and category
 
 Leveraging NLP Innovations
 
@@ -23,7 +24,7 @@ Semantic search aims to understand the intent behind a query, allowing for more 
 
 I've been exploring the use of the specific SBERT model multi-qa-mpnet-base-dot-v1 for semantic search, and here's how I've found it can be utilized. First, I load this pre-trained model using a library that supports Transformer models. I first loaded this pre-trained model and then I preprocessed the documents, tokenizing and normalizing them before using the SBERT model to create their embeddings. In my approach, I used both cosine similarity (refer to the swagger document with GET APIs starting with /cosine)and dot-product similarity (refer to the swagger document with GET APIs starting with /dot) to compute the similarity scores between the query and document embeddings, allowing for a flexible comparison method. 
 
-I subsequently ranked the documents based on these similarity scores, retrieving the most relevant ones. I found that the multi-qa-mpnet-base-dot-v1 model, possibly tailored for specific semantic search or question-answering tasks, worked effectively for my purposes. 
+I subsequently ranked the documents based on these scores, retrieving the most relevant ones(top 5). I found that the multi-qa-mpnet-base-dot-v1 model, possibly tailored for specific semantic search or question-answering tasks, worked effectively for my purposes. 
 
 What could I have done better? 
 
