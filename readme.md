@@ -1,4 +1,5 @@
-Fetch Rewards - NLP Take Home // Prajay Sachdev (prajay9924@gmail.com)
+**Fetch Rewards - NLP Take Home 
+Prajay Sachdev (prajay9924@gmail.com)**
 
 Steps to run the assignment in a new conda environment
 
